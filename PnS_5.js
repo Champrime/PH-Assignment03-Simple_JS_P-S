@@ -33,28 +33,32 @@ Hints 💡:  split(), join() মেথড ব্যবহার করতে প
 
 function analyzeText(str){
     let maxLength = 0, bWord = "";
-    if (typeof str !== "string") return "Invalid";
+    if (typeof str !== "string" || str.length <= 0) return "Invalid";
 
     let strArray = str.split(" ");
-    for (word of strArray){
-        if (maxLength < word.length) {maxLength = word.length; bWord = word};
+    // for (word of strArray){
+    //     if (maxLength < word.length) {maxLength = word.length; bWord = word};
+    // }
+
+    for (let i = 0; i < strArray.length; i++){
+        if (maxLength < strArray[i].length) {maxLength = strArray[i].length; bWord = strArray[i]}
     }
 
-    let sentenceSummery = { longwords: bWord, token: maxLength };
+    let sentenceSummery = { longwords: bWord, token: strArray.join("").length };
     return sentenceSummery;
 }
 
-let crp = "I am a little honest person", max = 0, wd = 0;
-console.log(crp instanceof String ? true : false);
-crp = crp.split(" ");
-for (crowd of crp){
-    if (max < crowd.length) {max = crowd.length; wd = crowd};
-}
+// let crp = "I am a little honest person", max = 0, wd = 0;
+// console.log(crp instanceof String ? true : false);
+// crp = crp.split(" ");
+// for (crowd of crp){
+//     if (max < crowd.length) {max = crowd.length; wd = crowd};
+// }
 
-max;
-wd;
-let sence = { large : max, word : wd };
-console.log(sence);
+// max;
+// wd;
+// let sence = { large : max, word : wd };
+// console.log(sence);
 
 console.log(analyzeText("I am a little honest person"));
 console.log(analyzeText("Hello world"));

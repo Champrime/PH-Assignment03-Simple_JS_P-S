@@ -21,15 +21,15 @@ function gonoVote(array){
     let countY = 0, countN = 0;
     if (!(array instanceof Array)) return "Invalid";
 
-    for (voterOpinion of array){
-        if(voterOpinion == "ha") countY += 1;
-        if(voterOpinion == "na") countN += 1;
-    }
-
-    // for (let i = 0; i < array.length; i++){
-    //     if(array[i] === "ha") countY += 1;
-    //     if(array[i] === "na") countN += 1;
+    // for (voterOpinion of array){
+    //     if(voterOpinion == "ha") countY += 1;
+    //     if(voterOpinion == "na") countN += 1;
     // }
+
+    for (let i = 0; i < array.length; i++){
+        if(array[i] === "ha") countY += 1;
+        if(array[i] === "na") countN += 1;
+    }
 
     if (countN == countY) {return "equal"}
     else if (countN < countY) {return true}
