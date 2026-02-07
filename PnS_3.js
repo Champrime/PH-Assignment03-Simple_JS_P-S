@@ -25,7 +25,7 @@ function finalScore(omr){
     if (omr.right + omr.wrong + omr.skip !== 100 || omr.right < 0 || omr.wrong < 0 || omr.skip < 0) return "Invalid";
 
     let score = omr.right * 1 - omr.wrong * 0.5;
-    return {Number: score, Rounded: Math.round(score)};
+    return Math.round(score);
 }
 
 
